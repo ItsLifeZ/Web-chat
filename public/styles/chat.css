@@ -1,0 +1,157 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #111;
+    color: #fff;
+}
+
+@keyframes square-out-center {
+    from {
+      clip-path: inset(0 0 0 0);
+    }
+    to {
+      clip-path: inset(100% 100% 100% 100%);
+    }
+  }
+  
+  [transition-style="out:square:center"] {
+    animation: 3.5s cubic-bezier(.25, 1, .30, 1) square-out-center both;
+  }
+
+.welcome {
+    position: absolute;
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #ff6665;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.app {
+    height: 100%;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app .app-container {
+    position: relative;
+    padding: 110px;
+    width: 300px;
+    height: 250px;
+    background-color: #fff;
+    color: #111;
+    border-radius: 7px;
+    box-shadow: 0px 0px 10px rgba(255, 102, 101, 0.5);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    resize: both;
+    overflow: hidden;
+    min-height: 150px;
+    min-width: 150px;
+    max-height: 500px;
+    max-width: 500px;
+}
+
+.app .app-container .container-messages {
+    position: absolute;
+    top: 0;
+    height: 90%;
+    width: 100%;
+    background-color: #fff;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.app .app-container .container-messages .messages {
+    margin-top: 5px;
+}
+
+.app .app-container .container-messages .messages .my-message {
+    background-color: #ff6665;
+    color: #fff;
+    border-radius: 7px;
+    padding: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+.app .app-container .container-messages .messages .other-message {
+    background-color: #1C1C1C;
+    color: #fff;
+    border-radius: 7px;
+    padding: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+}
+
+.app .app-container .container-controls {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1C1C1C;
+    width: 100%;
+    height: 10%;
+}
+
+.app .app-container .container-controls .controls-message {
+    border: #fff solid 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 95%;
+    background-color: #fff;
+    border-radius: 360px;
+}
+
+.app .app-container .container-controls .controls-message:hover {
+    border: #ff6665 solid 1px;
+}
+
+.app .app-container .container-controls .controls-message #send-message {
+    cursor: pointer;
+}
+
+.app .app-container .container-controls .controls-message #send-message:hover path {
+    fill: #ff6665;
+}
+
+.app .app-container .container-controls .controls-message #message-input {
+    height: 25px;
+    width: 92%;
+    border: none;
+    background-color: transparent;
+    color: #111;
+    margin: 0;
+    margin-left: 3px;
+    outline: none;
+}
+
+.app .app-container .container-controls .controls-message .send-message {
+    position: absolute;
+    right: 22px;
+    margin-top: 5px;
+}
